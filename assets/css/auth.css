@@ -1,0 +1,314 @@
+/*******************************************
+************ Authentication Page************
+*******************************************/
+
+:root {
+    --primary-color: #6C63FF;
+    --primary-hover: #5a52e0;
+    --text-color: #2d3748;
+    --text-light: #4a5568;
+    --bg-color: #f8f9fa;
+    --white: #ffffff;
+    --border-color: #e2e8f0;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --font-family: 'Inter', sans-serif;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.ht-100v {
+    height: 100vh;
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse !important;
+}
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+/* Auth Background Image */
+.auth-bg-image {
+    background: url(../images/background/auth-bg.png) no-repeat center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-bg-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.auth-left-content,
+.signup-form {
+    width: 500px;
+    z-index: 2;
+    position: relative;
+}
+
+/* Weather Widget */
+.weather-small {
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.weather-small .current-weather {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+}
+
+.weather-small .current-weather i {
+    font-size: 2.5rem;
+    vertical-align: middle;
+}
+
+.weather-city {
+    font-size: 1.4rem;
+    letter-spacing: 5px;
+    margin-top: 0.5rem;
+}
+
+/* Auth Content */
+.auth-left-content {
+    color: var(--white);
+    text-align: center;
+}
+
+.create-account {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.auth-left-content p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+}
+
+.auth-quick-links a {
+    border-radius: 30px;
+    padding: 0.8rem 2.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    transition: var(--transition);
+}
+
+.auth-quick-links a:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* Signup Form */
+.signup-form {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin: 0 auto;
+}
+
+.auth-logo {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.auth-logo img {
+    width: 64px;
+    height: 64px;
+}
+
+.auth-logo p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.auth-logo span {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+}
+
+.sign-up {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.sign-up:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* Checkbox */
+.material-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.material-control-input {
+    margin-right: 0.5rem;
+}
+
+.material-control-description {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Links */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+.go-login {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Modal */
+.fingerprint-modal .modal-content {
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.fingerprint-modal .modal-body {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.fingerprint-modal .modal-body img {
+    width: 100px;
+    height: 100px;
+    margin-top: 2rem;
+    border-radius: 50%;
+    padding: 1rem;
+    border: 3px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.fingerprint-modal .modal-body img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 998px) {
+    .auth-left-content,
+    .signup-form {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .auth-bg-image {
+        display: none;
+    }
+
+    .signup-form {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .auth-logo {
+        margin-top: 1rem;
+    }
+}
+
+/* Ensure the dropdown opens downward */
+.form-group {
+    position: relative;
+}
+
+/* Style the select dropdown */
+select.form-control {
+    appearance: none; /* Removes default browser styling */
+    height: 40px; /* Ensures a compact height */
+    line-height: 40px; /* Centers text vertically */
+    padding: 0 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem; /* Ensure text is readable */
+    background-color: var(--white);
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Prevents text cutoff */
+}
+
+/* Fix the placeholder text getting cut off */
+select.form-control option {
+    font-size: 1rem; /* Ensures text is fully visible */
+    padding: 0.5rem;
+}
+
+/* Ensure dropdown opens downward */
+select {
+    max-height: 200px; /* Prevents dropdown from becoming too large */
+    overflow-y: auto; /* Enables scrolling inside dropdown */
+}
+
+/* Ensure the dropdown content is not cut off */
+.form-group select {
+    display: block;
+    width: 100%;
+}
